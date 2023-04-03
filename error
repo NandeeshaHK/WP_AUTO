@@ -1,0 +1,62 @@
+if x is a float (latitude)
+if y is a int (longitude)
+
+throws this error
+rpcMissionItem.x = self.x
+TypeError: 130311016.0 has type numpy.float32, but expected one of: int, long 
+
+if x is a int (latitude)
+if y is a int (longitude)
+
+throws this error
+raise MissionRawError(result, "upload_mission()", mission_items)
+mavsdk.mission_raw.MissionRawError: INVALID_ARGUMENT: 'Invalid Argument'; origin: upload_mission(); params: ([<mavsdk.mission_raw.MissionItem object at 0x7f12603f1f10>, <mavsdk.mission_raw.MissionItem object at 0x7f12603f1790>, <mavsdk.mission_raw.MissionItem object at 0x7f12603f1d90>, <mavsdk.mission_raw.MissionItem object at 0x7f12603f1ee0>, <mavsdk.mission_raw.MissionItem object at 0x7f12603f1f40>, <mavsdk.mission_raw.MissionItem object at 0x7f12603f17c0>, <mavsdk.mission_raw.MissionItem object at 0x7f12603f1af0>],)
+
+actual parameters for reference 
+    """
+     Mission item exactly identical to MAVLink MISSION_ITEM_INT.
+
+     Parameters
+     ----------
+     seq : uint32_t
+          Sequence (uint16_t)
+
+     frame : uint32_t
+          The coordinate system of the waypoint (actually uint8_t)
+
+     command : uint32_t
+          The scheduled action for the waypoint (actually uint16_t)
+
+     current : uint32_t
+          false:0, true:1 (actually uint8_t)
+
+     autocontinue : uint32_t
+          Autocontinue to next waypoint (actually uint8_t)
+
+     param1 : float
+          PARAM1, see MAV_CMD enum
+
+     param2 : float
+          PARAM2, see MAV_CMD enum
+
+     param3 : float
+          PARAM3, see MAV_CMD enum
+
+     param4 : float
+          PARAM4, see MAV_CMD enum
+
+     x : int32_t
+          PARAM5 / local: x position in meters * 1e4, global: latitude in degrees * 10^7
+
+     y : int32_t
+          PARAM6 / y position: local: x position in meters * 1e4, global: longitude in degrees *10^7
+
+     z : float
+          PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending on frame)
+
+     mission_type : uint32_t
+          Mission type (actually uint8_t)
+
+     """
+
+
